@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        
+        </body>
+        <button onclick="aloha()">Aloha Button</button>
+        <ul>
+            <li>This is my first thing</li>
+        </ul>
+        <script>
+            function aloha() {
+                //get li from ul
+            var ulTag = document.getElementsByTagName('ul')[0];
+            //1 create element
+            var newItem = document.createElement('li');
+            //2 text element
+            var newText = document.createTextNode("Aloha !!!");
+            //3 append new paragraph and text together
+            newItem.appendChild(newText); 
+            ulTag.appendChild(newItem);
+            //4 final attach to document
+            document.body.appendChild(ulTag);
+}
+
+
+
+            </script>
+
+
+        </body>
+    </html>
