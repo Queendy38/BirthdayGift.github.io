@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+    <input type="text" id="userChoice">
+    <button onclick="shoppingList()">Click me</button>
+    <ol></ol>
+    <script>
+
+//build an empty list that will be added to when a user enters values into a text field box
+//build a text box
+//when the user clicks a Button
+//take the value and save it as a variable
+//add what they typed to an ordered list
+
+function shoppingList(){
+   var x = document.getElementById('userChoice').value;
+   document.getElementById('userChoice').value = "";
+   var li = document.createElement('li');
+   var newText = document.createTextNode(x);
+   li.appendChild(newText);
+   var olTag = document.getElementsByTagName('ol')[0];
+   olTag.appendChild(li);
+
+}
+
+
+        </script>
+
+
+    </body>
+
+    </html>
