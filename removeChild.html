@@ -1,0 +1,34 @@
+
+<html >
+<head>
+
+</head>
+<body>
+    <ul>
+    <li>Trump</li>
+    <li>Hitler</li>
+    <li>Stain</li>
+    </ul>
+        <select id="assholes">
+        <option value = "0">Trump</option> <!--index poeition = value-->
+        <option value = "1">Hitler</option>
+        <option value = "2">Stain</option>
+        </select>
+<button onclick="remove()">Remove A hole</button>
+             <script>
+                 function remove() {
+                     var ass = document.getElementById('assholes').value;
+                     var elim = document.getElementsByTagName('li')[ass];
+                     var ulTag = elim.parentNode;
+                     ulTag.removeChild(elim);
+                   
+
+
+
+                 }
+
+
+
+            </script>
+</body> 
+</html>
