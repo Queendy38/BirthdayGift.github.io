@@ -4,31 +4,43 @@
 
 </head>
 <body>
-    <ul>
-    <li>Trump</li>
-    <li>Hitler</li>
-    <li>Stain</li>
-    </ul>
-        <select id="assholes">
-        <option value = "0">Trump</option> <!--index poeition = value-->
-        <option value = "1">Hitler</option>
-        <option value = "2">Stain</option>
-        </select>
-<button onclick="remove()">Remove A hole</button>
-             <script>
-                 function remove() {
-                     var ass = document.getElementById('assholes').value;
-                     var elim = document.getElementsByTagName('li')[ass];
-                     var ulTag = elim.parentNode;
-                     ulTag.removeChild(elim);
-                   
+    <ol></ol>
+    <select id="people"></select>
+    <button onclick="remove()">Remove by number</button>
+   <script>
+     var arr = ["Yui", "Joseph", "Garbiel"];
+     var select = document.getElementById('people');
+     function populate(){
+            for ( var i = 0; i < arr.length; i++) { //for loop
+                  var opt = i + 1 ;             // add 1 to the generated number
+                  var elem = document.createElement("option");  //create the option element
+                  elem.textContent = opt; // bind stuff faster 
+                  elem.value = opt;     // bind opt to option value(elem)
+                  select.appendChild(elem);  //append elem to select
+
+                  //i want to populate the order list
+                var li = document.createElement('li');
+                var newText = document.createTextNode(arr[i]);
+                li.appendChild(newText);
+                var ol = document.getElementsByTagName('ol')[0];
+                ol.appendChild(li);
+            }
+         }
+    
+       function remove(){
+           var sel = document.getElementById('people').value;
+           var li = document.getElementsByTagName('li')[sel-1];
+           var parent = li.parentNode;
+           parent.removeChild(li);
+       }
 
 
+    
+    </script>
+<script>
+populate()
+</script>
 
-                 }
-
-
-
-            </script>
+        
 </body> 
 </html>
