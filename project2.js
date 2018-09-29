@@ -10,8 +10,7 @@ document.body.style.backgroundSize = "cover";
     arrWaitL.unshift(userName);
     document.querySelectorAll("h2")[0].innerHTML =  "Room Filled, " + arrWaitL[0] + " " + "Waitlisted" ;
     
-  
-    }
+  }
     
 function addName() {
     var userName = document.getElementById('userN').value;
@@ -35,11 +34,9 @@ function addName() {
    var olList = document.getElementsByTagName('ol')[0];
    //append newList to olList
    olList.appendChild(newList);
-
+   
 }                       
 
-function clearName() {  //remove order list
-      //var order = document.querySelectorAll("ol")[0]; //take first ol
-      delete addName();
-      delete userName; 
+function clearName() {  //remove everything
+   location.reload();
     }
