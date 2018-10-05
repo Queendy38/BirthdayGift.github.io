@@ -6,7 +6,7 @@
     margin-right:auto;
 } 
 #box1, #box2, #box3, #box4, #box5, #box6 {
-    max-width:16vw;
+    min-width:16vw;
     min-height:30vh;
     background-color:white;
     margin:2px;

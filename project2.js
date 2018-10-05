@@ -7,6 +7,11 @@ document.body.style.backgroundSize = "cover";
 //create an array that store names from the input box
 var arrName = [];
 var arrWait = [];
+var total = 0;
+
+//when clicks a button, remove the first name from list 
+
+
 function timeOut(){
 
 
@@ -20,7 +25,7 @@ setTimeout (function() { //after 1 min, no more check-in
 
 }
 function addName() { 
-  
+  total++; //adds one everytime you presses a button
   //get name from guest
   var name = document.getElementById('name').value;
  //clear the input box
@@ -28,14 +33,7 @@ function addName() {
  //unshift the name to arrName
   arrName.unshift(name);
   
-if (arrName.length > 4){ //if the length is greate than 4, display room filled and put people in waitlist
-arrWait.unshift(name); 
-document.getElementsByTagName('h3')[0].innerHTML = "Full! " + arrWait + " waitlisted";
-
-return;
-}
-//create if and else statement
-// if (arrName.length < 5){
+if (total <= 4) { //if the length is greate than 4, display room filled and put people in waitlist
   var ol = document.getElementsByTagName('ol')[0];
   //create element for li
   var li = document.createElement('li');
@@ -48,36 +46,45 @@ return;
   var ol = document.getElementsByTagName('ol')[0];
   //append li to ol
   ol.appendChild(li);
-  document.getElementsByTagName('p')[1].innerHTML = "All Guests:" + arrName;
- }
+  document.getElementsByTagName('p')[1].innerHTML = "All Guests:" + arrName; }
 
-
-//when clicks a button, remove the first name from list 
- function remove(){
-   var li = document.getElementsByTagName('li')[0];
-   var parent = li.parentNode;
-   parent.removeChild(li)[0];
-   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////trying to remove an item from arrName
+else {
+      arrWait.unshift(name); 
+document.getElementsByTagName('h3')[0].innerHTML = "Full! " + arrWait + " waitlisted";
+ 
    
+ }
 }
 //when click the button, remove the order list
 function deleteAll(){
    var ol = document.getElementById('list');
    var parent = ol.parentNode;
    parent.removeChild(ol);
+  
    
 }
+function removeName() { //remove the li
+    var li = document.getElementsByTagName('li')[0];
+    var parent = li.parentNode;
+    parent.removeChild(li)[0];
+    total--;
+
+}
 function replace(){//when clicks a button, take the name from waitlist and put it into the list
-  var name = arrWait[0];
+  var name = arrWait[0]; 
+  total--; //////////////////////////////////////////////////////////////////////////////////////////////////////////manipulate number of total to control people go in the list
+ if (total <=5) {
   var li = document.createElement('li');
   var ol = document.getElementById('list');
   var d = new Date();
   var text = document.createTextNode(name + " ("+ "Checked in: " + d.toUTCString() + ")");
   li.appendChild(text);
   ol.appendChild(li);
-  arrWait.shift();
+  arrWait.shift();}
+  else{
+    return;
+  
+  
+ }
+  
 }
-//function darrName(){
-  //var elim = arrName[0];
-  //elim.parentNode.removeChild(elim);
-//}
