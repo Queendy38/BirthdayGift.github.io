@@ -1,42 +1,50 @@
 document.body.style.backgroundImage = "url(https://image.dhgate.com/0x0s/f2-albu-g7-M01-FD-03-rBVaSVpqyJKALvMHAAQvG4iaCzA661.jpg/hd-mountwallpapers-for-bed-room-ain-autumn.jpg)";
 document.body.style.backgroundSize = "cover"; 
- //create an empty array that stores values
- var arrWaitL = [];
- var arr = []; 
+ //create 6 rooms for guests to check-in and check-out
 
-  function waitlist(){
-    var userName = document.getElementById('userN').value;
-    document.getElementById('userN').value = "";
-    arrWaitL.unshift(userName);
-    document.querySelectorAll("h2")[0].innerHTML =  "Room Filled, " + arrWaitL[0] + " " + "Waitlisted" ;
-    
-  }
-    
+
+//add name when I click the button
+//create an array that store names from the input box
+var arrName = [];
+
 function addName() {
-    var userName = document.getElementById('userN').value;
-  if (arr.length > 2 ) { //if the length of the array is > 2, then put name in waitlist
-      
-    waitlist();
-    return;
-   }
-   //push the value into the array
-   arr.push(userName);
-   //clear box
+  //get name from guest
+  var name = document.getElementById('name').value;
+ //clear the input box
+  document.getElementById('name').value = "";
+ //unshift the name to arrName
+  arrName.unshift(name);
   
-   document.getElementById('userN').value = "";
-   //create list item
-   var newList = document.createElement('li');
-   //create text nodes
-   var text = document.createTextNode(userName);
-   //append text to list item
-   newList.appendChild(text);
-   //get ol element from HTML
-   var olList = document.getElementsByTagName('ol')[0];
-   //append newList to olList
-   olList.appendChild(newList);
-   
-}                       
+//create if and else statement
+ if (arrName.length < 5){
+  //create element for li
+  var li = document.createElement('li');
+  //take entered name and stores it as liText
+  var liText = document.createTextNode(name);
+  //append text to li
+  li.appendChild(liText);
+  //get ol from HTML
+  var ol = document.getElementsByTagName('ol')[0];
+  //append li to ol
+  ol.appendChild(li);
+  
+ }
 
-function clearName() {  //remove everything
-   location.reload();
-    }
+else{
+   document.getElementsByTagName('h3')[0].innerHTML = "Full";
+  
+ }
+ //display names in the array
+ document.getElementsByTagName('p')[0].innerHTML = arrName;
+
+}
+//stop guests from checking in after three people, say room is full
+
+//when clicks a button, remove the first name from list 
+ function remove(){
+   var li = document.getElementsByTagName('li')[0];
+   var parent = li.parentNode;
+   parent.removeChild(li)[0];
+   arrName.shift();
+   
+}

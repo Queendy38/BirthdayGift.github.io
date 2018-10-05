@@ -1,35 +1,48 @@
 #container{
-    width:95vw;
+    width:98vw;
     height:90vh;
     background-color:rgba(255, 255, 255, 0.445);
     margin-left:auto;
     margin-right:auto;
-   
-}
-#room1, #room2, #room3, #room4{
-    width:20vw;
-    height:70vh;
+} 
+#box1, #box2, #box3, #box4, #box5, #box6 {
+    min-width:16vw;
+    min-height:30vh;
     background-color:white;
+    margin:2px;
+}
+h1{
+    
+    background-color:rgba(255, 255, 255, 0.671);
+    width:98vw;
+    margin:auto;
+    margin-bottom: 25px;
     text-align:center;
-    border-radius: 10px;
-    border-width:1.5px;
-    border-color:black;
+    font-size:100px;
+}
+img {
+    width:13vw;
+    height:20vh;
     border-style:solid;
-
+    border-width:1px;
+    border-radius:80px;
 }
-#room1 {
+#box1{
+ float:left;
+}
+#box2{
     float:left;
-}
-#room2 {
-     float:right;
-}
-#room3 {
-      float:left;
-      margin-left:10vh;
+   }
+#box3{
+    float:left;
+   }
+#box4{
+    float:left;
+   }
+#box5{
+    float:left;
+   }
+#box6{
+    float:left;
+   }            
 
-}
-#room4 {
-    float:right;
-    margin-right:10vh;
-
-}
