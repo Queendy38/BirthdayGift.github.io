@@ -1,0 +1,37 @@
+
+<html>
+<head>
+   <style>
+    #dadiv{
+     width:300px;
+     height:300px;
+
+    }
+  
+    
+    </style>
+</head>
+<body>
+  <h1 id="red"></h1>
+  <h1 id="green"></h1>
+  <h1 id="blue"></h1>
+  
+  <script>
+    function doStuff() {
+        var r = Math.floor(Math.random() * 256);
+        document.getElementById('red').innerHTML = r;
+        var g = Math.floor(Math.random() * 256);
+        document.getElementById('green').innerHTML = g;
+        var b = Math.floor(Math.random() * 256);
+        document.getElementById('blue').innerHTML = b;
+        document.body.style.backgroundColor = (r, g, b);
+
+    }
+    
+    
+    
+    </script>
+     <button onclick="doStuff()">Change Color</button>   
+        
+</body>
+</html>
