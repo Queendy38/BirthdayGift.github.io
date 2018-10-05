@@ -6,7 +6,7 @@
     margin-right:auto;
 } 
 #box1, #box2, #box3, #box4, #box5, #box6 {
-    min-width:16vw;
+    max-width:16vw;
     min-height:30vh;
     background-color:white;
     margin:2px;
@@ -44,5 +44,10 @@ img {
    }
 #box6{
     float:left;
-   }            
-
+   } 
+   li{
+       font-size:15px;
+   }           
+#cleanUp{
+    color:red;
+}

@@ -8,12 +8,15 @@
     <h1><img src="https://nice-branding.com/wp-content/uploads/2017/03/HTP-branding-company-logo-icon-design.jpg">Tsz's Hotel</h1>
     <div id="container">
        <div id="box1">
-           <h3>Room 1</h2>
+           <h3 onclick="replace()">Room 1</h2>
             <input type="text" id="name">
-            <button onclick="addName()">Check In</button>
+            <button onclick="addName()"><script>timeOut()</script>Check-In</button>
             <ol id="list"></ol>
             <p></p>
-            <button onclick="remove()">Delete</button>
+            <p onclick="darrName()"></p>
+            <button onclick="remove()">Check-Out</button>
+            <p onclick="deleteAll()">Remove All Guests</p> 
+            <p id="cleanUp"></p>
         </div>
        <div id="box2"><h3>Room 2</h2></div>
        <div id="box3"><h3>Room 3</h2></div>
