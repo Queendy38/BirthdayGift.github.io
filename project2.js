@@ -2,20 +2,15 @@ document.body.style.backgroundImage = "url(https://image.dhgate.com/0x0s/f2-albu
 document.body.style.backgroundSize = "cover"; 
  //create 6 rooms for guests to check-in and check-out
 
-
-//add name when I click the button
 //create an array that store names from the input box
 var arrName = [];
-var arrWait = [];
 var total = 0;
-
-//when clicks a button, remove the first name from list 
 
 
 function timeOut(){
 
 
-setTimeout (function() { //after 1 min, no more check-in
+setTimeout (function() { //after 1 min, no more check-in, button disappears
        var button = document.getElementsByTagName('button')[0];
        var parent = button.parentNode;
        parent.removeChild(button);
@@ -31,9 +26,10 @@ function addName() {
  //clear the input box
   document.getElementById('name').value = "";
  //unshift the name to arrName
-  arrName.unshift(name);
+ document.getElementsByTagName('h3')[0].innerHTML = "Room 1";
   
-if (total <= 4) { //if the length is greate than 4, display room filled and put people in waitlist
+if (total <= 5) { //if the length is greate than 4, display room filled and put people in waitlist
+   arrName.unshift(name);
   var ol = document.getElementsByTagName('ol')[0];
   //create element for li
   var li = document.createElement('li');
@@ -48,43 +44,35 @@ if (total <= 4) { //if the length is greate than 4, display room filled and put 
   ol.appendChild(li);
   document.getElementsByTagName('p')[1].innerHTML = "All Guests:" + arrName; }
 
-else {
-      arrWait.unshift(name); 
-document.getElementsByTagName('h3')[0].innerHTML = "Full! " + arrWait + " waitlisted";
+else if (total >= 5){
+      document.getElementsByTagName('h3')[0].innerHTML = "Full!";
+      
  
-   
- }
 }
-//when click the button, remove the order list
-function deleteAll(){
-   var ol = document.getElementById('list');
-   var parent = ol.parentNode;
-   parent.removeChild(ol);
   
-   
+ }
+
+//when click the button, remove the order list
+//I dont want to remove the enitre, I want to be able to remove all li
+function deleteAll(){
+   total = 0;
+   document.getElementsByTagName('h3')[0].innerHTML = "Room 1";
+  //find child
+  //find parent
+  //remove child from parent
+  var li = document.getElementsByTagName('li')[0-4];
+  var parent = li.parentNode;
+  parent.removeChild(li)[0-4];
 }
 function removeName() { //remove the li
+    document.getElementsByTagName('h3')[0].innerHTML = "Room 1";
     var li = document.getElementsByTagName('li')[0];
     var parent = li.parentNode;
-    parent.removeChild(li)[0];
-    total--;
+    parent.removeChild(li);
+    total = 5; //set button = 5
+    total--; //button minus 1
 
 }
-function replace(){//when clicks a button, take the name from waitlist and put it into the list
-  var name = arrWait[0]; 
-  total--; //////////////////////////////////////////////////////////////////////////////////////////////////////////manipulate number of total to control people go in the list
- if (total <=5) {
-  var li = document.createElement('li');
-  var ol = document.getElementById('list');
-  var d = new Date();
-  var text = document.createTextNode(name + " ("+ "Checked in: " + d.toUTCString() + ")");
-  li.appendChild(text);
-  ol.appendChild(li);
-  arrWait.shift();}
-  else{
-    return;
-  
-  
- }
-  
+for (i = 0; i < 6; i++){
+      
 }
