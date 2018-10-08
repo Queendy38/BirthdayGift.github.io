@@ -10,6 +10,7 @@
     min-height:30vh;
     background-color:white;
     margin:2px;
+
 }
 h1{
     
@@ -48,6 +49,9 @@ img {
    li{
        font-size:15px;
    }           
-#cleanUp{
+.cleanup{
     color:red;
+}
+p{
+    word-wrap: break-word;
 }
