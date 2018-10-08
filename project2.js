@@ -1,4 +1,4 @@
-document.body.style.backgroundImage = "url(https://image.dhgate.com/0x0s/f2-albu-g7-M01-FD-03-rBVaSVpqyJKALvMHAAQvG4iaCzA661.jpg/hd-mountwallpapers-for-bed-room-ain-autumn.jpg)";
+document.body.style.backgroundImage = "url(https://www.americaisraeltours.com/wp-content/uploads/greecetour.jpg)";
 document.body.style.backgroundSize = "cover"; 
  //create 6 rooms for guests to check-in and check-out
 
