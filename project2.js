@@ -89,12 +89,15 @@ function timeOut2(){
           },60000);
           
           }
+     
+    
 function addName() { 
   //total++; //adds one everytime you presses a button
   //get name from guest
+  
   var name = document.getElementById('name').value;
  //clear the input box
-  document.getElementById('name').value = "";
+  document.getElementById('name').value = ""; 
  //unshift the name to arrName
  document.getElementsByTagName('h3')[0].innerHTML = "Room 1";
   
@@ -112,7 +115,7 @@ if (arrName.length < 5) { //if the length is less than 6, display room filled an
   var ol = document.getElementById('list');
   //append li to ol
   ol.appendChild(li);
-  document.getElementById('allGuest').innerHTML = "All Guests:" + arrGuest; }
+  document.getElementById('allGuest').innerHTML = "All Guests: " + arrGuest; }
 
 else {
       document.getElementsByTagName('h3')[0].innerHTML = "Full!";
@@ -143,7 +146,7 @@ if (arrName2.length < 5) { //if the length is less than 6, display room filled a
   var ol = document.getElementById('list2');
   //append li to ol
   ol.appendChild(li);
-  document.getElementById('allGuest2').innerHTML = "All Guests:" + arrGuest2; }
+  document.getElementById('allGuest2').innerHTML = "All Guests: " + arrGuest2; }
 
 else {//if click more than five times, do this
       document.getElementsByTagName('h3')[1].innerHTML = "Full!";
@@ -175,7 +178,7 @@ if (arrName3.length < 5) { //if the length is less than 6, display room filled a
   var ol = document.getElementById('list3');
   //append li to ol
   ol.appendChild(li);
-  document.getElementById('allGuest3').innerHTML = "All Guests:" + arrGuest3; }
+  document.getElementById('allGuest3').innerHTML = "All Guests: " + arrGuest3; }
 
 else {//if click more than five times, do this
       document.getElementsByTagName('h3')[2].innerHTML = "Full!";
@@ -207,7 +210,7 @@ if (arrName4.length < 5) { //if the length is less than 6, display room filled a
   var ol = document.getElementById('list4');
   //append li to ol
   ol.appendChild(li);
-  document.getElementById('allGuest4').innerHTML = "All Guests:" + arrGuest4; }
+  document.getElementById('allGuest4').innerHTML = "All Guests: " + arrGuest4; }
 
 else {//if click more than five times, do this
       document.getElementsByTagName('h3')[3].innerHTML = "Full!";
@@ -239,7 +242,7 @@ if (arrName5.length < 5) { //if the length is less than 6, display room filled a
   var ol = document.getElementById('list5');
   //append li to ol
   ol.appendChild(li);
-  document.getElementById('allGuest5').innerHTML = "All Guests:" + arrGuest5; }
+  document.getElementById('allGuest5').innerHTML = "All Guests: " + arrGuest5; }
 
 else{//if click more than five times, do this
       document.getElementsByTagName('h3')[4].innerHTML = "Full!";
@@ -271,7 +274,7 @@ if (arrGuest6.length < 5) { //if the length is less than 6, display room filled 
   var ol = document.getElementById('list6');
   //append li to ol
   ol.appendChild(li);
-  document.getElementById('allGuest6').innerHTML = "All Guests:" + arrGuest6; }
+  document.getElementById('allGuest6').innerHTML = "All Guests: " + arrGuest6; }
 
 else{//if click more than five times, do this
       document.getElementsByTagName('h3')[5].innerHTML = "Full!";
@@ -346,10 +349,8 @@ function removeName() { //remove the li
   var ol = document.getElementsByTagName('ol')[0];
   var li = ol.childNodes[0];
   ol.removeChild(li)[0]; 
+ }
  
-
-
-}
 function removeName2() { //remove the li
   arrName2.length--;
   document.getElementsByTagName('h3')[1].innerHTML = "Room 2";
