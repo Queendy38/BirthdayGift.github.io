@@ -387,3 +387,9 @@ function removeName6() { //remove the li
   var li = ol.childNodes[0]; //define which li to remove
   ol.removeChild(li)[0]; 
  }
+ //delete li when presses it
+ //activate function when press enter
+ document.getElementsByTagName('li').onclick = function(){
+   var li = document.getElementsByTagName('li');
+   li.parentNode.removeChild(li);
+ }
