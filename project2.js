@@ -392,3 +392,10 @@ var listItems = document.getElementsByTagName("li"); // or document.querySelecto
 for (var i = 0; i < listItems.length; i++) {
   listItems[i].onclick = function() {this.parentNode.removeChild(this);}
 }
+//activate a function when presses enter
+var elem = document.getElementById("wage");
+elem.onkeyup = function(e){
+    if(e.keyCode == 13){
+       alert("Here");
+    }
+}
