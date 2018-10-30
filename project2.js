@@ -397,6 +397,7 @@ function removeName6() { //remove the li
   var ol = document.getElementsByTagName('ol')[5]; //remove from ol2
   var li = ol.childNodes[0]; //define which li to remove
   ol.removeChild(li)[0]; 
+<<<<<<< HEAD
 }
  //delete li when clicks on it
  var listItems = document.getElementsByTagName("li"); // or document.querySelectorAll("li"); 
@@ -408,3 +409,18 @@ function removeName6() { //remove the li
 
 //check box 6
 //activate a function when presses enter
+=======
+ }
+//delete li when clicks on it
+var listItems = document.getElementsByTagName("li"); // or document.querySelectorAll("li"); 
+for (var i = 0; i < listItems.length; i++) {
+  listItems[i].onclick = function() {this.parentNode.removeChild(this);}
+}
+//activate a function when presses enter
+var elem = document.getElementById("wage");
+elem.onkeyup = function(e){
+    if(e.keyCode == 13){
+       alert("Here");
+    }
+}
+>>>>>>> c7dc75d15656ba04c62cbd07b9505d6f460734fc
