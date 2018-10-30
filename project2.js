@@ -90,7 +90,13 @@ function timeOut2(){
           
           }
      
-    
+
+ name.onkeyup = function(){
+   if (event.keyCode == 13){
+     addName();
+   }
+ } 
+              
 function addName() { 
   //total++; //adds one everytime you presses a button
   //get name from guest
@@ -101,7 +107,7 @@ function addName() {
  //unshift the name to arrName
  document.getElementsByTagName('h3')[0].innerHTML = "Room 1";
   
-if (arrName.length < 5) { //if the length is less than 6, display room filled and put people in waitlist
+if (arrName.length < 4) { //if the length is less than 6, display room filled and put people in waitlist
    arrName.unshift(name);
    arrGuest.unshift(name);
   //create element for li
@@ -115,7 +121,12 @@ if (arrName.length < 5) { //if the length is less than 6, display room filled an
   var ol = document.getElementById('list');
   //append li to ol
   ol.appendChild(li);
-  document.getElementById('allGuest').innerHTML = "All Guests: " + arrGuest; }
+  document.getElementById('allGuest').innerHTML = "All Guests: " + arrGuest; 
+  
+  li.onclick = function(){ //remove your selected li
+    this.parentNode.removeChild(this);
+    arrName--;
+  } }
 
 else {
       document.getElementsByTagName('h3')[0].innerHTML = "Full!";
@@ -132,7 +143,7 @@ else {
  //unshift the name to arrName
  document.getElementsByTagName('h3')[1].innerHTML = "Room 2";
   
-if (arrName2.length < 5) { //if the length is less than 6, display room filled and put people in waitlist
+if (arrName2.length < 4) { //if the length is less than 6, display room filled and put people in waitlist
    arrName2.unshift(name);
    arrGuest2.unshift(name);
   //create element for li
@@ -164,7 +175,7 @@ function addName3(){
  //unshift the name to arrName
  document.getElementsByTagName('h3')[2].innerHTML = "Room 3";
   
-if (arrName3.length < 5) { //if the length is less than 6, display room filled and put people in waitlist
+if (arrName3.length < 4) { //if the length is less than 6, display room filled and put people in waitlist
    arrName3.unshift(name);
    arrGuest3.unshift(name);
   //create element for li
@@ -196,7 +207,7 @@ function addName4(){
  //unshift the name to arrName
  document.getElementsByTagName('h3')[3].innerHTML = "Room 4";
   
-if (arrName4.length < 5) { //if the length is less than 6, display room filled and put people in waitlist
+if (arrName4.length < 4) { //if the length is less than 6, display room filled and put people in waitlist
    arrName4.unshift(name);
    arrGuest4.unshift(name);
   //create element for li
@@ -228,7 +239,7 @@ function addName5(){
  //unshift the name to arrName
  document.getElementsByTagName('h3')[4].innerHTML = "Room 5";
   
-if (arrName5.length < 5) { //if the length is less than 6, display room filled and put people in waitlist
+if (arrName5.length < 4) { //if the length is less than 6, display room filled and put people in waitlist
    arrName5.unshift(name);
    arrGuest5.unshift(name);
   //create element for li
@@ -260,7 +271,7 @@ function addName6(){
  //unshift the name to arrName
  document.getElementsByTagName('h3')[5].innerHTML = "Room 6";
   
-if (arrGuest6.length < 5) { //if the length is less than 6, display room filled and put people in waitlist
+if (arrName6.length < 4) { //if the length is less than 6, display room filled and put people in waitlist
    arrName6.unshift(name);
    arrGuest6.unshift(name);
   //create element for li
@@ -386,10 +397,14 @@ function removeName6() { //remove the li
   var ol = document.getElementsByTagName('ol')[5]; //remove from ol2
   var li = ol.childNodes[0]; //define which li to remove
   ol.removeChild(li)[0]; 
- }
- //delete li when presses it
- //activate function when press enter
- document.getElementsByTagName('li').onclick = function(){
-   var li = document.getElementsByTagName('li');
-   li.parentNode.removeChild(li);
- }
+}
+ //delete li when clicks on it
+ var listItems = document.getElementsByTagName("li"); // or document.querySelectorAll("li"); 
+ for (var i = 0; i < listItems.length; i++) {
+  listItems[i].onclick = function() {
+    this.parentNode.removeChild(this);
+  }
+}
+
+//check box 6
+//activate a function when presses enter
