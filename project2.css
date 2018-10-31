@@ -71,3 +71,9 @@ p{
     text-align:center;
     position:initial;
 }
+#cleanUp{
+ visibility:hidden;   
+}
+#unlock{
+    visibility: hidden;
+}

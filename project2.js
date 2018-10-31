@@ -28,76 +28,19 @@ function timeOut(){
 
 
 setTimeout (function() { //after 1 min, div disappears
-       var button = document.getElementsByTagName('button')[0];
-       var div = box1.style.visibility = "hidden";
-       document.getElementById('cleanUp').innerHTML = "It's time to clean up the rooms.";
+       container.style.visibility = "hidden";
+       cleanUp.style.visibility = "visible";
+       unlock.style.visibility = "visible"
   
 },60000);
 
 }
-function timeOut2(){
 
-
-  setTimeout (function() { //after 1 min, no more check-in, button disappears
-         var button = document.getElementsByTagName('button')[1];
-         var parent = button.parentNode;
-         parent.removeChild(button);
-         document.getElementById('cleanUp2').innerHTML = "It's time to clean up the rooms.";
-    
-  },60000);
-  
+  function Unlock(){
+    container.style.visibility = "visible";
+    cleanUp.style.visibility = "hidden";
+    unlock.style.visibility = "hidden"
   }
-  function timeOut3(){
-
-
-    setTimeout (function() { //after 1 min, no more check-in, button disappears
-           var button = document.getElementsByTagName('button')[2];
-           var parent = button.parentNode;
-           parent.removeChild(button);
-           document.getElementById('cleanUp3').innerHTML = "It's time to clean up the rooms.";
-      
-    },60000);
-    
-    }
-    function timeOut4(){
-
-
-      setTimeout (function() { //after 1 min, no more check-in, button disappears
-             var button = document.getElementsByTagName('button')[3];
-             var parent = button.parentNode;
-             parent.removeChild(button);
-             document.getElementById('cleanUp4').innerHTML = "It's time to clean up the rooms.";
-        
-      },60000);
-      
-      }
-      function timeOut5(){
-
-
-        setTimeout (function() { //after 1 min, no more check-in, button disappears
-               var button = document.getElementsByTagName('button')[4];
-               var parent = button.parentNode;
-               parent.removeChild(button);
-               document.getElementById('cleanUp5').innerHTML = "It's time to clean up the rooms.";
-          
-        },60000);
-        
-        }
-        function timeOut6(){
-
-
-          setTimeout (function() { //after 1 min, no more check-in, button disappears
-                 var button = document.getElementsByTagName('button')[5];
-                 var parent = button.parentNode;
-                 parent.removeChild(button);
-                 document.getElementById('cleanUp6').innerHTML = "It's time to clean up the rooms.";
-            
-          },60000);
-          
-          }
-     
-
-  
               
 function addName() { 
   //total++; //adds one everytime you presses a button
