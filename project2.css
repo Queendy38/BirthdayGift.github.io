@@ -3,7 +3,6 @@
     height:90vh;
     background-color:rgba(255, 255, 255, 0.445);
     margin:auto;
-   
 } 
 #box1, #box2, #box3, #box4, #box5, #box6 {
     max-width:17vw;
@@ -22,7 +21,7 @@ body{
 h1{
     
     background-color:rgba(255, 255, 255, 0.671);
-    width:100vw;
+    width:90vw;
     margin:auto;
     margin-bottom: 25px;
     text-align:center;
