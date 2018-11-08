@@ -15,7 +15,7 @@ var arrName5 = [];
 var arrGuest5 = [];
 var arrName6 = [];
 var arrGuest6 = [];
-
+ //var name = document.getElementById('name');
 name.onkeyup = function() {/////////////////////////////////////////////////////////////////
   if (event.keyCode == 13){
     addName();
